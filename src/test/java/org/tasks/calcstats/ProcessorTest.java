@@ -15,11 +15,11 @@ public class ProcessorTest {
     void setup() {
         processor = new Processor();
         integers1 = new int[]{6, 9, 15, -2, 92, 11};
-        integers2 = new int[]{1, 2, 3, 4, 5, 6};
+        integers2 = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
     }
     @Test
-    void shouldBeAbleToDetermineMinimumValue_whenDifferentInputsAreProvided() {
+    void shouldBeAbleToDetermineMinimumValue() {
         int smallestInteger1 = processor.getMinValue(integers1);
         int smallestInteger2 = processor.getMinValue(integers2);
 
@@ -28,12 +28,21 @@ public class ProcessorTest {
     }
 
     @Test
-    void shouldBeAbleToDetermineMaximumValue_whenDifferentInputsAreProvided() {
+    void shouldBeAbleToDetermineMaximumValue() {
         int biggestInteger1 = processor.getMaxValue(integers1);
         int biggestInteger2 = processor.getMaxValue(integers2);
 
         assertEquals(92, biggestInteger1);
-        assertEquals(6, biggestInteger2);
+        assertEquals(10, biggestInteger2);
+    }
+
+    @Test
+    void shouldBeAbleToReturnNumberOfIntegersInArray() {
+        int elementsInIntegers1 = processor.getNumberOfElements(integers1);
+        int elementsInIntegers2 = processor.getNumberOfElements(integers2);
+
+        assertEquals(10, elementsInIntegers2);
+        assertEquals(6, elementsInIntegers1);
     }
 
 }

@@ -14,4 +14,8 @@ public class Processor {
             if (integer > maxValue) maxValue = integer;
         return maxValue;
     }
+
+    public int getNumberOfElements(int[] ints) {
+        return ints.length;
+    }
 }
