@@ -45,4 +45,13 @@ public class ProcessorTest {
         assertEquals(6, elementsInIntegers1);
     }
 
+    @Test
+    void shouldBeAbleToDetermineTheAverageValue() {
+       double averageOfIntegers1 = processor.getAverageValue(integers1);
+       double averageOfIntegers2 = processor.getAverageValue(integers2);
+
+        assertEquals(21.833333, averageOfIntegers1);
+        assertEquals(5.5, averageOfIntegers2);
+    }
+
 }
