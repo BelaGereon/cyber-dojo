@@ -32,7 +32,6 @@ public class Processor {
         }
 
         double average = sum / integers.length;
-
         return Double.parseDouble(df.format(average));
     }
 }

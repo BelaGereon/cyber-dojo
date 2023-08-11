@@ -18,6 +18,7 @@ public class ProcessorTest {
         integers2 = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
     }
+
     @Test
     void shouldBeAbleToDetermineMinimumValue() {
         int smallestInteger1 = processor.getMinValue(integers1);
