@@ -55,5 +55,17 @@ public class FormatterTest {
         // then
         assertEquals(1.234, formattedNumber);
     }
+
+    @Test
+    void shouldRemoveLastDecimals_whenTheyAreZero() {
+        // given
+        double someNumber =0.123000;
+
+        // when
+        double formattedNumber = formatter.format(someNumber);
+
+        // then
+        assertEquals(0.123, formattedNumber);
+    }
     
 }
