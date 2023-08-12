@@ -8,8 +8,8 @@ public class Formatter {
     private final String pattern;
     private final DecimalFormat df;
 
-    public Formatter(String pattern){
-        this.pattern = pattern;
+    public Formatter(){
+        this.pattern = "#.######";
         this.df = new DecimalFormat(pattern);
     }
     public float format(float number) {

@@ -16,7 +16,6 @@ public class ProcessorTest {
         processor = new Processor();
         integers1 = new int[]{6, 9, 15, -2, 92, 11};
         integers2 = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-
     }
 
     @Test

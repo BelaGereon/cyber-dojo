@@ -6,15 +6,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FormatterTest {
 
-    String pattern = "#.######";
-    Formatter formatter = new Formatter(pattern);
+    Formatter formatter = new Formatter();
     @Test
     void shouldHaveCorrectDecimalFormat_whenInitialized() {
-        // when
-        String decimalFormat = formatter.getPattern();
-
         // then
-        assertEquals("#.######", decimalFormat);
+        assertEquals("#.######", formatter.getPattern());
     }
 
     @Test
