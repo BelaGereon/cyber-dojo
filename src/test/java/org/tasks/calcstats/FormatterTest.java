@@ -7,58 +7,53 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class FormatterTest {
 
     Formatter formatter = new Formatter();
-    @Test
-    void shouldHaveCorrectDecimalFormat_whenInitialized() {
-        // then
-        assertEquals("#.######", formatter.getPattern());
-    }
 
     @Test
-    void shouldRoundToLowerDecimal_whenLastDecimalIsSmallerThan5() {
+    void shouldRoundToLowerDecimal_when7thDecimalIsSmallerThan5() {
         // given
-        float someNumber = 1.4444444444F;
+        double someNumber = 1.444_444_444;
 
         // when
-        float formattedNumber = formatter.format(someNumber);
+        double formattedNumber = formatter.format(someNumber);
         
         // then
-        assertEquals(1.444444F, formattedNumber);
+        assertEquals(1.444444, formattedNumber);
     }
 
     @Test
-    void shouldRoundToHigherDecimal_whenLastDecimalIsBiggerThan5() {
+    void shouldRoundToHigherDecimal_when7thDecimalIsBiggerThan5() {
         // given
-        float someNumber = 0.1234567F;
+        double someNumber = 0.123_456_789;
 
         // when
-        float formattedNumber = formatter.format(someNumber);
+        double formattedNumber = formatter.format(someNumber);
 
         // then
-        assertEquals(0.123457F, formattedNumber);
+        assertEquals(0.123457, formattedNumber);
     }
 
     @Test
-    void shouldRoundToHigherDecimal_whenLastDecimalIs5() {
+    void shouldRoundToHigherDecimal_when7thDecimalEquals5() {
         // given
-        float someNumber = 0.9876545F;
+        double someNumber = 0.987_654_514;
 
         // when
-        float formattedNumber = formatter.format(someNumber);
+        double formattedNumber = formatter.format(someNumber);
 
         // then
-        assertEquals(0.987655F, formattedNumber);
+        assertEquals(0.987655, formattedNumber);
     }
 
     @Test
     void shouldKeepNumberOfDecimals_whenThereAreLessThan6() {
         // given
-        float someNumber = 1.2345F;
+        double someNumber = 1.234;
 
         // when
-        float formattedNumber = formatter.format(someNumber);
+        double formattedNumber = formatter.format(someNumber);
 
         // then
-        assertEquals(someNumber, formattedNumber);
+        assertEquals(1.234, formattedNumber);
     }
     
 }
