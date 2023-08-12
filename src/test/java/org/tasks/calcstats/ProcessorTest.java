@@ -19,7 +19,7 @@ public class ProcessorTest {
     }
 
     @Test
-    void shouldBeAbleToDetermineMinimumValue() {
+    void shouldDetermineMinimumValue() {
         int smallestInteger1 = processor.getMinValue(integers1);
         int smallestInteger2 = processor.getMinValue(integers2);
 
@@ -28,7 +28,7 @@ public class ProcessorTest {
     }
 
     @Test
-    void shouldBeAbleToDetermineMaximumValue() {
+    void shouldDetermineMaximumValue() {
         int biggestInteger1 = processor.getMaxValue(integers1);
         int biggestInteger2 = processor.getMaxValue(integers2);
 
@@ -37,7 +37,7 @@ public class ProcessorTest {
     }
 
     @Test
-    void shouldBeAbleToReturnNumberOfIntegersInArray() {
+    void shouldReturnNumberOfIntegersInArray() {
         int elementsInIntegers1 = processor.getNumberOfElements(integers1);
         int elementsInIntegers2 = processor.getNumberOfElements(integers2);
 
@@ -46,7 +46,7 @@ public class ProcessorTest {
     }
 
     @Test
-    void shouldBeAbleToDetermineTheAverageValue() {
+    void shouldDetermineTheAverageValue() {
        double averageOfIntegers1 = processor.getAverageValue(integers1);
        double averageOfIntegers2 = processor.getAverageValue(integers2);
 
