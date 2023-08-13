@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class StatisticTest {
 
     @Test
-    void shouldReturnTheCorrectStatistic() {
+    void shouldReturnFormattedStatisticString() {
        // given
        Statistic statistic = new Statistic();
        int[] sequence = { 6, 9, 15, -2, 92, 11 };
