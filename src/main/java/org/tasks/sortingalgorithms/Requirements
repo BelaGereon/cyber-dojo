@@ -10,9 +10,6 @@ The output should look as follows:
     2. sort by sized reversed: [Integer.MAXIMUM_VALUE, 435, 98, 87, 45, 8, 1, -2, -143]
     3. sort by number of chars: [1, 8, -2, 45, 87, 98, 435, -143, Integer.MAXIMUM_VALUE]
 
-Make sure to use your own implementations of the sorting algorithms instead of the ones that are already given by
-the java.util.Collection<E> Interface!!!
-
 BONUS REQUIREMENTS:
 -   Think of a way to make the sorting algorithms more generic, i.e. be able to sort lists of different data types.
 -   Create a new sorting algorithm of your choice and implement it so the program is able to use it with the already
