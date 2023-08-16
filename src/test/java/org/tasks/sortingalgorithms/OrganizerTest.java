@@ -26,12 +26,27 @@ public class OrganizerTest {
     void shouldReturnListImmediately_whenGivenListHasOnlyOneObject() throws EmptyListException {
         final List<Integer> listWithOneElement = new ArrayList<>();
         listWithOneElement.add(1);
-
         Organizer organizer = new Organizer();
 
         assertEquals(listWithOneElement, organizer.sort(listWithOneElement));
     }
 
+    @Test
+    void shouldReturnSortedList_whenListHasMoreThanOneElement() throws EmptyListException {
+        final List<Integer> listWithMoreThanOneElement = new ArrayList<>();
+        listWithMoreThanOneElement.add(2);
+        listWithMoreThanOneElement.add(1);
+
+        Organizer organizer = new Organizer();
+
+        final List<Integer> expectedList = new ArrayList<>();
+        expectedList.add(1);
+        expectedList.add(2);
+
+        final List<Integer> sortedList = organizer.sort(listWithMoreThanOneElement);
+
+        assertEquals(expectedList, sortedList);
+    }
 
 
 }

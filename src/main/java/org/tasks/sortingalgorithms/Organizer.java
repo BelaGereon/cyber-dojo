@@ -7,6 +7,11 @@ public class Organizer {
         if (list.isEmpty()) {
             throw new EmptyListException("The list is empty and can not be sorted!");
         }
-         return list;
+
+        if (list.size() == 1) {
+            return list;
+        }
+
+        return list.stream().sorted().toList();
     }
 }
