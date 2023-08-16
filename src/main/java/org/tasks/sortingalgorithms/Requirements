@@ -1,9 +1,9 @@
-Write a function that is able to sort the elements of an array in a few different ways:
+Write a function that is able to sort the elements in a list in a few different ways:
     1. sort by size
     2. sort by size reversed
     3. sort by number of chars
 
-You can use this array as a reference: [8, 98, 1, 45, 435, -2, 87, -143, Integer.MAXIMUM_VALUE]
+You can use this list as a reference: [8, 98, 1, 45, 435, -2, 87, -143, Integer.MAXIMUM_VALUE]
 
 The output should look as follows:
     1. sort by size: [-143, -2, 1, 8, 45, 87, 98, 435, Integer.MAXIMUM_VALUE]
@@ -11,7 +11,7 @@ The output should look as follows:
     3. sort by number of chars: [1, 8, -2, 45, 87, 98, 435, -143, Integer.MAXIMUM_VALUE]
 
 BONUS REQUIREMENTS:
--   Think of a way to make the sorting algorithms more generic, i.e. be able to sort arrays of different data types.
+-   Think of a way to make the sorting algorithms more generic, i.e. be able to sort lists of different data types.
 -   Create a new sorting algorithm of your choice and implement it so the program is able to use it with the already
     existing data.
 -   Which design pattern can be used to make the code more maintainable / extendable?
