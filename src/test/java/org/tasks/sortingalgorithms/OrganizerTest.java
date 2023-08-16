@@ -1,10 +1,12 @@
 package org.tasks.sortingalgorithms;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class OrganizerTest {
 
@@ -13,14 +15,12 @@ public class OrganizerTest {
         final List<Integer> emptyList = new ArrayList<>();
         Organizer organizer = new Organizer();
 
-        Exception exception = Assertions.assertThrows(EmptyListException.class, () -> {
-            organizer.sort(emptyList);
-        });
+        Exception exception = assertThrows(EmptyListException.class, () -> organizer.sort(emptyList));
 
         String expectedErrorMessage = "The list is empty and can not be sorted!";
         String actualErrorMessage = exception.getMessage();
 
-        Assertions.assertTrue(actualErrorMessage.contains(expectedErrorMessage));
+        assertTrue(actualErrorMessage.contains(expectedErrorMessage));
     }
 
 }
