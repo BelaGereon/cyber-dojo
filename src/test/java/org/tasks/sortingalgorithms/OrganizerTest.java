@@ -5,8 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class OrganizerTest {
 
@@ -22,5 +21,17 @@ public class OrganizerTest {
 
         assertTrue(actualErrorMessage.contains(expectedErrorMessage));
     }
+
+    @Test
+    void shouldReturnListImmediately_whenGivenListHasOnlyOneObject() throws EmptyListException {
+        final List<Integer> listWithOneElement = new ArrayList<>();
+        listWithOneElement.add(1);
+
+        Organizer organizer = new Organizer();
+
+        assertEquals(listWithOneElement, organizer.sort(listWithOneElement));
+    }
+
+
 
 }
