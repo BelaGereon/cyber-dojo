@@ -1,4 +1,7 @@
-package org.tasks.sortingalgorithms;
+package org.tasks.sortingalgorithms.concretesorters;
+
+import org.tasks.sortingalgorithms.EmptyListException;
+import org.tasks.sortingalgorithms.Sorter;
 
 import java.util.List;
 

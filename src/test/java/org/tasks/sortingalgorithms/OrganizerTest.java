@@ -2,6 +2,7 @@ package org.tasks.sortingalgorithms;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.tasks.sortingalgorithms.concretesorters.AscendingSorter;
 
 import java.util.ArrayList;
 import java.util.List;
