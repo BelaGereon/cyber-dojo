@@ -3,15 +3,13 @@ package org.tasks.sortingalgorithms;
 import java.util.List;
 
 public class Organizer {
-    public List<Integer> sort(List<Integer> list) throws EmptyListException {
-        if (list.isEmpty()) {
-            throw new EmptyListException("The list is empty and can not be sorted!");
-        }
+    private Sorter currentSorter;
 
-        if (list.size() == 1) {
-            return list;
-        }
+    public List<Integer> sort(List<Integer> list) throws EmptyListException{
+        return currentSorter.sort(list);
+    }
 
-        return list.stream().sorted().toList();
+    public void setSorter(Sorter sorter) {
+        this.currentSorter = sorter;
     }
 }

@@ -21,6 +21,7 @@ public class OrganizerTest {
     @Test
     void shouldReturnNoElementsException_whenGivenListIsEmpty() {
         String expectedErrorMessage = "The list is empty and can not be sorted!";
+        organizer.setSorter(new AscendingSorter());
 
         Exception exception = assertThrows(EmptyListException.class, () -> organizer.sort(list));
         String actualErrorMessage = exception.getMessage();
@@ -30,43 +31,24 @@ public class OrganizerTest {
 
     @Test
     void shouldReturnListImmediately_whenGivenListHasOnlyOneObject() throws EmptyListException {
+        organizer.setSorter(new AscendingSorter());
+
         list.add(1);
         assertEquals(list, organizer.sort(list));
     }
 
     @Test
-    void shouldSortListAscending() {
+    void shouldSortListAscending() throws EmptyListException {
         final int[] testdataArray = new int[]{8, 98, 1, 45, 435, -2, 87, -143, Integer.MAX_VALUE};
         final int[] sortedTestdataArray = new int[]{-143, -2, 1, 8, 45, 87, 98, 435, Integer.MAX_VALUE};
 
+        organizer.setSorter(new AscendingSorter());
+
         list = fillListWithArrayElements(testdataArray);
         List<Integer> expectedSortedList = fillListWithArrayElements(sortedTestdataArray);
 
         final List<Integer> sortedList;
-
-        try {
-            sortedList = organizer.sort(list);
-        } catch (EmptyListException e) {
-            throw new RuntimeException(e);
-        }
-
-        assertEquals(expectedSortedList, sortedList);
-    }
-
-    @Test
-    void shouldSortListDescending() {
-        final int[] testdataArray = new int[]{8, 98, 1, 45, 435, -2, 87, -143, Integer.MAX_VALUE};
-        list = fillListWithArrayElements(testdataArray);
-
-        final int[] sortedTestdataArray = new int[]{Integer.MAX_VALUE, 435, 98, 87, 45, 8, 1, -2, -143};
-        List<Integer> expectedSortedList = fillListWithArrayElements(sortedTestdataArray);
-
-        final List<Integer> sortedList;
-        try {
-            sortedList = organizer.sort(list);
-        } catch (EmptyListException e) {
-            throw new RuntimeException(e);
-        }
+        sortedList = organizer.sort(list);
 
         assertEquals(expectedSortedList, sortedList);
     }
