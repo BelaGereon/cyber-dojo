@@ -1,7 +1,4 @@
-package org.tasks.sortingalgorithms.concretesorters;
-
-import org.tasks.sortingalgorithms.EmptyListException;
-import org.tasks.sortingalgorithms.Sorter;
+package org.tasks.sortingalgorithms;
 
 import java.util.List;
 
@@ -16,7 +13,7 @@ public abstract class BasicSorter implements Sorter {
         return list;
     }
 
-    abstract List<Integer> sortingAlgorithm(List<Integer> list);
+    protected abstract List<Integer> sortingAlgorithm(List<Integer> list);
 
     private Boolean preconditionsAreMet(List<Integer> list) throws EmptyListException {
         if (list.isEmpty()) {
