@@ -10,7 +10,6 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class BasicSorterTest {
-
     private final Organizer organizer = new Organizer();
     private final Sorter anySorter = new AscendingSorter();
     private final List<Integer> list = new ArrayList<>();
