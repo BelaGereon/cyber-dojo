@@ -17,4 +17,17 @@ public class LowercaseTransformerTest {
         // then
         assertEquals("lorem ipsum blah blah blah...", result);
     }
+
+    @Test
+    void shouldReturnEmptyString_whenStringIsEmpty() {
+        // given
+        String string = "";
+        LowercaseTransformer lowercaseTransformer = new LowercaseTransformer();
+
+        // when
+        String result = lowercaseTransformer.transform(string);
+
+        // then
+        assertEquals("", result);
+    }
 }
