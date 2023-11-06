@@ -5,12 +5,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class UppercaseTransformerTest {
+     private final UppercaseTransformer uppercaseTransformer = new UppercaseTransformer();
 
     @Test
     void shouldReturnEmptyString_whenGivenStringIsEmpty()  {
         // given
         String string = "";
-        UppercaseTransformer uppercaseTransformer = new UppercaseTransformer();
 
         // when
         String result = uppercaseTransformer.transform(string);
@@ -23,7 +23,6 @@ public class UppercaseTransformerTest {
     void shouldReturnStringInAllUppercase() {
         // given
         String string = "Lorem Ipsum blah blah blah...";
-        UppercaseTransformer uppercaseTransformer = new UppercaseTransformer();
 
         // when
         String result = uppercaseTransformer.transform(string);
