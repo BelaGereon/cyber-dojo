@@ -1,10 +1,12 @@
 package org.tasks.sortingalgorithms;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.tasks.sortingalgorithms.concretesorters.CharSorter;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.tasks.sortingalgorithms.TestHelper.fillListWithArrayElements;
 
 public class CharSorterTest {
@@ -18,6 +20,15 @@ public class CharSorterTest {
     @BeforeEach
     void setup() {
         organizer.setSorter(new CharSorter());
+    }
+
+    @Test
+    void shouldSortListByChars_whenCurrentSorter_isCharSorter() throws EmptyListException {
+        setupLists();
+
+        final List<Integer> sortedList = organizer.sort(list);
+
+        assertEquals(expectedSortedList, sortedList);
     }
 
     private void setupLists() {
