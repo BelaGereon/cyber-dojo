@@ -5,11 +5,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LowercaseTransformerTest {
+    private final LowercaseTransformer lowercaseTransformer = new LowercaseTransformer();
+
     @Test
     void shouldReturnStringInAllLowercase() {
         // given
         String string = "LOREM IPSUM BLAH Blah blah...";
-        LowercaseTransformer lowercaseTransformer = new LowercaseTransformer();
 
         // when
         String result = lowercaseTransformer.transform(string);
@@ -22,7 +23,6 @@ public class LowercaseTransformerTest {
     void shouldReturnEmptyString_whenStringIsEmpty() {
         // given
         String string = "";
-        LowercaseTransformer lowercaseTransformer = new LowercaseTransformer();
 
         // when
         String result = lowercaseTransformer.transform(string);
