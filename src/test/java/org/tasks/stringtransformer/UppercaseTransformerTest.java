@@ -1,12 +1,17 @@
 package org.tasks.stringtransformer;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class UppercaseTransformerTest {
-     private final UppercaseTransformer uppercaseTransformer = new UppercaseTransformer();
+     private final StringTransformer uppercaseTransformer = new StringTransformer();
 
+     @BeforeEach
+     void setup() {
+         uppercaseTransformer.setTransformer(new UppercaseTransformer());
+     }
     @Test
     void shouldReturnEmptyString_whenGivenStringIsEmpty()  {
         // given

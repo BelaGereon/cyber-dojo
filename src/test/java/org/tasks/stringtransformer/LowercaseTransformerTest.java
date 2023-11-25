@@ -1,11 +1,17 @@
 package org.tasks.stringtransformer;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LowercaseTransformerTest {
-    private final LowercaseTransformer lowercaseTransformer = new LowercaseTransformer();
+    private final StringTransformer lowercaseTransformer = new StringTransformer();
+
+    @BeforeEach
+    void setup() {
+        lowercaseTransformer.setTransformer(new LowercaseTransformer());
+    }
 
     @Test
     void shouldReturnStringInAllLowercase() {

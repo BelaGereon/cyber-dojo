@@ -1,7 +1,9 @@
 package org.tasks.stringtransformer;
 
-public class UppercaseTransformer {
-    public String transform(String string) {
+public class UppercaseTransformer extends BasicTransformer {
+
+    @Override
+    protected String sortingAlgorithm(String string) {
         return string.toUpperCase();
     }
 }
