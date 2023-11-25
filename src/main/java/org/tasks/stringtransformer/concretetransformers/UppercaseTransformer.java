@@ -1,4 +1,6 @@
-package org.tasks.stringtransformer;
+package org.tasks.stringtransformer.concretetransformers;
+
+import org.tasks.stringtransformer.BasicTransformer;
 
 public class UppercaseTransformer extends BasicTransformer {
 
